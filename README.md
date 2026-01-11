@@ -1,14 +1,23 @@
 # Notion Rich Format Skill
 
-A Claude Code skill for creating and formatting Notion pages with rich block types and text styling.
+An Agent Skill for creating and formatting Notion pages with rich block types and text styling.
 
 ## What is this?
 
-This is a reference skill for [Claude Code](https://claude.ai/code) that provides comprehensive documentation for Notion's block and rich text formatting API. Use it when creating or formatting Notion documents via the [Notion MCP server](https://github.com/makenotion/notion-mcp-server).
+This is a reference skill that provides comprehensive documentation for Notion's block and rich text formatting API. Use it when creating or formatting Notion documents via the [Notion MCP server](https://github.com/makenotion/notion-mcp-server).
+
+## What are Agent Skills?
+
+[Agent Skills](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills) are an open standard published by Anthropic for packaging domain expertise into composable resources that agents can discover and load dynamically. Skills work across multiple platforms:
+
+- **Claude.ai** - Upload as a zip file via Settings > Features
+- **Claude Code** - Place in `~/.claude/skills/` (personal) or `.claude/skills/` (project)
+- **Claude Agent SDK** - Place in `.claude/skills/` directory
+- **Claude API** - Upload via the Skills API (`/v1/skills` endpoints)
 
 ## Features
 
-The skill covers all Notion block types and formatting options:
+This skill covers all Notion block types and formatting options:
 
 - **Text blocks**: paragraphs, headings (with toggleable option), toggles, quotes
 - **Lists**: bulleted, numbered, to-do items
@@ -26,33 +35,44 @@ Plus complete rich text formatting:
 
 ## Installation
 
-### With rulesync (recommended)
+### Claude.ai
 
-Copy the `SKILL.md` file to your rulesync skills directory:
+1. Zip the `SKILL.md` file
+2. Go to Settings > Features
+3. Upload the zip file
+
+### Claude Code
 
 ```bash
-mkdir -p .rulesync/skills/notion-rich-format
-cp SKILL.md .rulesync/skills/notion-rich-format/
-pnpm exec rulesync generate --targets claudecode
+# Personal (available in all projects)
+mkdir -p ~/.claude/skills/notion-rich-format
+cp SKILL.md ~/.claude/skills/notion-rich-format/
+
+# Or project-specific
+mkdir -p .claude/skills/notion-rich-format
+cp SKILL.md .claude/skills/notion-rich-format/
 ```
 
-### Manual installation
-
-Copy the `SKILL.md` file to your Claude Code skills directory:
+### Claude Agent SDK
 
 ```bash
 mkdir -p .claude/skills/notion-rich-format
 cp SKILL.md .claude/skills/notion-rich-format/
 ```
 
+Then include `"Skill"` in your `allowed_tools` configuration.
+
+### Claude API
+
+Upload via the Skills API endpoints. See [Skills API documentation](https://docs.anthropic.com/en/build-with-claude/skills-guide).
+
 ## Requirements
 
-- [Claude Code](https://claude.ai/code)
 - [Notion MCP server](https://github.com/makenotion/notion-mcp-server) configured with your Notion integration token
 
 ## Usage
 
-Once installed, Claude Code will automatically use this skill when you ask it to:
+Once installed, Claude automatically uses this skill when you ask it to:
 
 - Create a Notion page with formatting
 - Format or restructure an existing Notion page
@@ -62,6 +82,13 @@ Example prompts:
 - "Create a Notion page with a table comparing these options"
 - "Format this content for Notion with toggles and callouts"
 - "Add a two-column layout to my Notion page"
+
+## Learn more
+
+- [Agent Skills announcement](https://www.anthropic.com/news/skills)
+- [Agent Skills engineering blog](https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills)
+- [Agent Skills documentation](https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview)
+- [Awesome Claude Skills](https://github.com/travisvn/awesome-claude-skills) - Community curated list
 
 ## License
 
