@@ -1,9 +1,9 @@
 ---
-name: notion-rich-format
+name: formatting-notion-pages
 description: Apply rich formatting to Notion pages - toggles, callouts, headers, and styled text. Use when creating or formatting Notion documents via the Notion MCP server.
 ---
 
-# Notion rich format
+# Formatting Notion pages
 
 Reference guide for creating and formatting Notion pages with rich block types and text styling via the Notion MCP.
 

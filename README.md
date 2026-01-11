@@ -37,7 +37,7 @@ Plus complete rich text formatting:
 
 ### Claude.ai
 
-1. Zip the `notion-rich-format` directory
+1. Zip the `formatting-notion-pages` directory
 2. Go to Settings > Features
 3. Upload the zip file
 
@@ -45,23 +45,23 @@ Plus complete rich text formatting:
 
 ```bash
 # Personal (available in all projects)
-cp -r notion-rich-format ~/.claude/skills/
+cp -r formatting-notion-pages ~/.claude/skills/
 
 # Or project-specific
-cp -r notion-rich-format .claude/skills/
+cp -r formatting-notion-pages .claude/skills/
 ```
 
 ### Claude Agent SDK
 
 ```bash
-cp -r notion-rich-format .claude/skills/
+cp -r formatting-notion-pages .claude/skills/
 ```
 
 Then include `"Skill"` in your `allowed_tools` configuration.
 
 ### Claude API
 
-Upload the `notion-rich-format` directory via the Skills API endpoints. See [Skills API documentation](https://docs.anthropic.com/en/build-with-claude/skills-guide).
+Upload the `formatting-notion-pages` directory via the Skills API endpoints. See [Skills API documentation](https://docs.anthropic.com/en/build-with-claude/skills-guide).
 
 ## Requirements
 
